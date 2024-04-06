@@ -6,10 +6,10 @@ import service.match.entity.Point;
 import service.match.entity.ScoreBoard;
 
 public class MatchScoreCalculationService {
-    OngoingMatchesService ongoingMatchesService = OngoingMatchesService.getInstance();
-    DeuseService deuse = new DeuseService();
-    ResetScoreService resetScore = new ResetScoreService();
-    UpdateScoreService updateScore = new UpdateScoreService();
+    private final OngoingMatchesService ongoingMatchesService = OngoingMatchesService.getInstance();
+    private final DeuseService deuse = new DeuseService();
+    private final ResetScoreService resetScore = new ResetScoreService();
+    private final UpdateScoreService updateScore = new UpdateScoreService();
     public void settingZeroPoints(CurrentMatch currentMatch){
         if(currentMatch.getScorePlayer1().getPoint().equals(Point.EMPTY.getPoint())
                 && currentMatch.getScorePlayer2().getPoint().equals(Point.EMPTY.getPoint())){

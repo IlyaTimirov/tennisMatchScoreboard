@@ -21553,3 +21553,398 @@ The object is already closed [90007-210]
 2023-10-30 14:04:01 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
 The object is already closed [90007-210]
+2023-10-31 14:12:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2023-10-31 14:12:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2023-10-31 14:13:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2023-10-31 14:14:42 database: flush
+org.h2.message.DbException: GeneralError
+	at org.h2.message.DbException.convert(DbException.java:419)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:120)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3296)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:585)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1528)
+	at org.h2.mvstore.MVStore.store(MVStore.java:1495)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1468)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1457)
+	at org.h2.mvstore.tx.TransactionStore.close(TransactionStore.java:365)
+	at org.h2.mvstore.db.Store.close(Store.java:348)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1281)
+	at org.h2.engine.Database.closeImpl(Database.java:1234)
+	at org.h2.engine.Database.close(Database.java:1144)
+	at org.h2.engine.OnExitDatabaseCloser.onShutdown(OnExitDatabaseCloser.java:85)
+	at org.h2.engine.OnExitDatabaseCloser.run(OnExitDatabaseCloser.java:114)
+	Suppressed: java.lang.NoClassDefFoundError: java/lang/StackOverflowError
+		at org.h2.message.DbException.convert(DbException.java:409)
+		... 14 more
+	Caused by: java.lang.ClassNotFoundException: Illegal access: this web application instance has been stopped already. Could not load [java.lang.StackOverflowError]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1422)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1259)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1220)
+		... 15 more
+	Caused by: java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [java.lang.StackOverflowError]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1420)
+		... 17 more
+Caused by: java.sql.SQLException: GeneralError
+	... 15 more
+Caused by: org.h2.mvstore.MVStoreException: java.lang.NoClassDefFoundError: java/util/concurrent/Future [2.1.210/3]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	... 11 more
+Caused by: java.lang.NoClassDefFoundError: java/util/concurrent/Future
+	at org.h2.mvstore.MVStore.submitOrRun(MVStore.java:1540)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1516)
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1422)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1259)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1220)
+	... 12 more
+Caused by: java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1420)
+	... 14 more
+2023-10-31 14:14:42 database: close
+org.h2.message.DbException: Ошибка ввода/вывода: "Closing"
+IO Exception: "Closing" [90028-210]
+	at org.h2.message.DbException.get(DbException.java:216)
+	at org.h2.mvstore.db.Store.close(Store.java:371)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1281)
+	at org.h2.engine.Database.closeImpl(Database.java:1234)
+	at org.h2.engine.Database.close(Database.java:1144)
+	at org.h2.engine.OnExitDatabaseCloser.onShutdown(OnExitDatabaseCloser.java:85)
+	at org.h2.engine.OnExitDatabaseCloser.run(OnExitDatabaseCloser.java:114)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Ошибка ввода/вывода: "Closing"
+IO Exception: "Closing" [90028-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 7 more
+Caused by: org.h2.mvstore.MVStoreException: java.lang.NoClassDefFoundError: java/util/concurrent/Future [2.1.210/3]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1528)
+	at org.h2.mvstore.MVStore.store(MVStore.java:1495)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1468)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1457)
+	at org.h2.mvstore.tx.TransactionStore.close(TransactionStore.java:365)
+	at org.h2.mvstore.db.Store.close(Store.java:348)
+	... 5 more
+Caused by: java.lang.NoClassDefFoundError: java/util/concurrent/Future
+	at org.h2.mvstore.MVStore.submitOrRun(MVStore.java:1540)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1516)
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1422)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1259)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1220)
+	... 12 more
+Caused by: java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1420)
+	... 14 more
+2024-04-06 16:16:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2024-04-06 16:16:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2024-04-06 16:16:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2024-04-06 16:27:19 database: flush
+org.h2.message.DbException: GeneralError
+	at org.h2.message.DbException.convert(DbException.java:419)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:120)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3296)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:585)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1528)
+	at org.h2.mvstore.MVStore.store(MVStore.java:1495)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1468)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1457)
+	at org.h2.mvstore.tx.TransactionStore.close(TransactionStore.java:365)
+	at org.h2.mvstore.db.Store.close(Store.java:348)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1281)
+	at org.h2.engine.Database.closeImpl(Database.java:1234)
+	at org.h2.engine.Database.close(Database.java:1144)
+	at org.h2.engine.OnExitDatabaseCloser.onShutdown(OnExitDatabaseCloser.java:85)
+	at org.h2.engine.OnExitDatabaseCloser.run(OnExitDatabaseCloser.java:114)
+	Suppressed: java.lang.NoClassDefFoundError: java/lang/StackOverflowError
+		at org.h2.message.DbException.convert(DbException.java:409)
+		... 14 more
+	Caused by: java.lang.ClassNotFoundException: Illegal access: this web application instance has been stopped already. Could not load [java.lang.StackOverflowError]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1422)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1259)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1220)
+		... 15 more
+	Caused by: java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [java.lang.StackOverflowError]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1420)
+		... 17 more
+Caused by: java.sql.SQLException: GeneralError
+	... 15 more
+Caused by: org.h2.mvstore.MVStoreException: java.lang.NoClassDefFoundError: java/util/concurrent/Future [2.1.210/3]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	... 11 more
+Caused by: java.lang.NoClassDefFoundError: java/util/concurrent/Future
+	at org.h2.mvstore.MVStore.submitOrRun(MVStore.java:1540)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1516)
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1422)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1259)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1220)
+	... 12 more
+Caused by: java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1420)
+	... 14 more
+2024-04-06 16:27:19 database: close
+org.h2.message.DbException: Ошибка ввода/вывода: "Closing"
+IO Exception: "Closing" [90028-210]
+	at org.h2.message.DbException.get(DbException.java:216)
+	at org.h2.mvstore.db.Store.close(Store.java:371)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1281)
+	at org.h2.engine.Database.closeImpl(Database.java:1234)
+	at org.h2.engine.Database.close(Database.java:1144)
+	at org.h2.engine.OnExitDatabaseCloser.onShutdown(OnExitDatabaseCloser.java:85)
+	at org.h2.engine.OnExitDatabaseCloser.run(OnExitDatabaseCloser.java:114)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Ошибка ввода/вывода: "Closing"
+IO Exception: "Closing" [90028-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 7 more
+Caused by: org.h2.mvstore.MVStoreException: java.lang.NoClassDefFoundError: java/util/concurrent/Future [2.1.210/3]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1528)
+	at org.h2.mvstore.MVStore.store(MVStore.java:1495)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1468)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1457)
+	at org.h2.mvstore.tx.TransactionStore.close(TransactionStore.java:365)
+	at org.h2.mvstore.db.Store.close(Store.java:348)
+	... 5 more
+Caused by: java.lang.NoClassDefFoundError: java/util/concurrent/Future
+	at org.h2.mvstore.MVStore.submitOrRun(MVStore.java:1540)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1516)
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1422)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1259)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1220)
+	... 12 more
+Caused by: java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1420)
+	... 14 more
+2024-04-06 16:27:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2024-04-06 16:28:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2024-04-06 16:28:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2024-04-06 16:28:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2024-04-06 16:28:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2024-04-06 16:28:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2024-04-06 16:28:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2024-04-06 16:28:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2024-04-06 16:40:05 database: flush
+org.h2.message.DbException: GeneralError
+	at org.h2.message.DbException.convert(DbException.java:419)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:120)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3296)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:585)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1528)
+	at org.h2.mvstore.MVStore.store(MVStore.java:1495)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1468)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1457)
+	at org.h2.mvstore.tx.TransactionStore.close(TransactionStore.java:365)
+	at org.h2.mvstore.db.Store.close(Store.java:348)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1281)
+	at org.h2.engine.Database.closeImpl(Database.java:1234)
+	at org.h2.engine.Database.close(Database.java:1144)
+	at org.h2.engine.OnExitDatabaseCloser.onShutdown(OnExitDatabaseCloser.java:85)
+	at org.h2.engine.OnExitDatabaseCloser.run(OnExitDatabaseCloser.java:114)
+	Suppressed: java.lang.NoClassDefFoundError: java/lang/StackOverflowError
+		at org.h2.message.DbException.convert(DbException.java:409)
+		... 14 more
+	Caused by: java.lang.ClassNotFoundException: Illegal access: this web application instance has been stopped already. Could not load [java.lang.StackOverflowError]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1422)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1259)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1220)
+		... 15 more
+	Caused by: java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [java.lang.StackOverflowError]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1420)
+		... 17 more
+Caused by: java.sql.SQLException: GeneralError
+	... 15 more
+Caused by: org.h2.mvstore.MVStoreException: java.lang.NoClassDefFoundError: java/util/concurrent/Future [2.1.210/3]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	... 11 more
+Caused by: java.lang.NoClassDefFoundError: java/util/concurrent/Future
+	at org.h2.mvstore.MVStore.submitOrRun(MVStore.java:1540)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1516)
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1422)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1259)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1220)
+	... 12 more
+Caused by: java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1420)
+	... 14 more
+2024-04-06 16:40:05 database: close
+org.h2.message.DbException: Ошибка ввода/вывода: "Closing"
+IO Exception: "Closing" [90028-210]
+	at org.h2.message.DbException.get(DbException.java:216)
+	at org.h2.mvstore.db.Store.close(Store.java:371)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1281)
+	at org.h2.engine.Database.closeImpl(Database.java:1234)
+	at org.h2.engine.Database.close(Database.java:1144)
+	at org.h2.engine.OnExitDatabaseCloser.onShutdown(OnExitDatabaseCloser.java:85)
+	at org.h2.engine.OnExitDatabaseCloser.run(OnExitDatabaseCloser.java:114)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Ошибка ввода/вывода: "Closing"
+IO Exception: "Closing" [90028-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 7 more
+Caused by: org.h2.mvstore.MVStoreException: java.lang.NoClassDefFoundError: java/util/concurrent/Future [2.1.210/3]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1528)
+	at org.h2.mvstore.MVStore.store(MVStore.java:1495)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1468)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1457)
+	at org.h2.mvstore.tx.TransactionStore.close(TransactionStore.java:365)
+	at org.h2.mvstore.db.Store.close(Store.java:348)
+	... 5 more
+Caused by: java.lang.NoClassDefFoundError: java/util/concurrent/Future
+	at org.h2.mvstore.MVStore.submitOrRun(MVStore.java:1540)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1516)
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1422)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1259)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1220)
+	... 12 more
+Caused by: java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1420)
+	... 14 more
+2024-04-06 16:40:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Время ожидания блокировки таблицы null истекло
+Timeout trying to lock table null; SQL statement:
+drop table if exists Matches cascade [50200-210]
+2024-04-06 16:40:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "MATCHES" уже существует
+Table "MATCHES" already exists; SQL statement:
+create table Matches (Player1 integer not null, Player2 integer not null, Winner integer not null, Id bigint generated by default as identity, primary key (Id)) [42101-210]
+2024-04-06 16:41:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2024-04-06 16:41:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2024-04-06 16:41:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-210]
+2024-04-06 16:41:47 database: flush
+org.h2.message.DbException: GeneralError
+	at org.h2.message.DbException.convert(DbException.java:419)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:120)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3296)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:585)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1528)
+	at org.h2.mvstore.MVStore.store(MVStore.java:1495)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1468)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1457)
+	at org.h2.mvstore.tx.TransactionStore.close(TransactionStore.java:365)
+	at org.h2.mvstore.db.Store.close(Store.java:348)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1281)
+	at org.h2.engine.Database.closeImpl(Database.java:1234)
+	at org.h2.engine.Database.close(Database.java:1144)
+	at org.h2.engine.OnExitDatabaseCloser.onShutdown(OnExitDatabaseCloser.java:85)
+	at org.h2.engine.OnExitDatabaseCloser.run(OnExitDatabaseCloser.java:114)
+	Suppressed: java.lang.NoClassDefFoundError: java/lang/StackOverflowError
+		at org.h2.message.DbException.convert(DbException.java:409)
+		... 14 more
+	Caused by: java.lang.ClassNotFoundException: Illegal access: this web application instance has been stopped already. Could not load [java.lang.StackOverflowError]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1422)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1259)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1220)
+		... 15 more
+	Caused by: java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [java.lang.StackOverflowError]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1420)
+		... 17 more
+Caused by: java.sql.SQLException: GeneralError
+	... 15 more
+Caused by: org.h2.mvstore.MVStoreException: java.lang.NoClassDefFoundError: java/util/concurrent/Future [2.1.210/3]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	... 11 more
+Caused by: java.lang.NoClassDefFoundError: java/util/concurrent/Future
+	at org.h2.mvstore.MVStore.submitOrRun(MVStore.java:1540)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1516)
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1422)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1259)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1220)
+	... 12 more
+Caused by: java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1420)
+	... 14 more
+2024-04-06 16:41:47 database: close
+org.h2.message.DbException: Ошибка ввода/вывода: "Closing"
+IO Exception: "Closing" [90028-210]
+	at org.h2.message.DbException.get(DbException.java:216)
+	at org.h2.mvstore.db.Store.close(Store.java:371)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1281)
+	at org.h2.engine.Database.closeImpl(Database.java:1234)
+	at org.h2.engine.Database.close(Database.java:1144)
+	at org.h2.engine.OnExitDatabaseCloser.onShutdown(OnExitDatabaseCloser.java:85)
+	at org.h2.engine.OnExitDatabaseCloser.run(OnExitDatabaseCloser.java:114)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Ошибка ввода/вывода: "Closing"
+IO Exception: "Closing" [90028-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:573)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 7 more
+Caused by: org.h2.mvstore.MVStoreException: java.lang.NoClassDefFoundError: java/util/concurrent/Future [2.1.210/3]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1528)
+	at org.h2.mvstore.MVStore.store(MVStore.java:1495)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1468)
+	at org.h2.mvstore.MVStore.commit(MVStore.java:1457)
+	at org.h2.mvstore.tx.TransactionStore.close(TransactionStore.java:365)
+	at org.h2.mvstore.db.Store.close(Store.java:348)
+	... 5 more
+Caused by: java.lang.NoClassDefFoundError: java/util/concurrent/Future
+	at org.h2.mvstore.MVStore.submitOrRun(MVStore.java:1540)
+	at org.h2.mvstore.MVStore.storeNow(MVStore.java:1516)
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1422)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1259)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1220)
+	... 12 more
+Caused by: java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [java.util.concurrent.Future]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1432)
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1420)
+	... 14 more
